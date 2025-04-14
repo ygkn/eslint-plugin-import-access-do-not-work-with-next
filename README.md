@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# eslint-plugin-import-access Reproduction
 
-## Getting Started
+This repository is a minimal reproduction example for [issue #124](https://github.com/uhyo/eslint-plugin-import-access/issues/124) in [eslint-plugin-import-access](https://github.com/uhyo/eslint-plugin-import-access).
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+❯ npm run lint
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> lint
+> next lint
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+./src/app/revalidate-path.ts
+3:10  Error: Cannot import a package-private export 'revalidatePath'  import-access/jsdoc
 
-## Learn More
+./src/app/test-import.tsx
+4:10  Error: Cannot import a package-private export 'formatDate'  import-access/jsdoc
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+```
