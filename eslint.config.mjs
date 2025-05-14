@@ -33,6 +33,7 @@ const eslintConfig = [
         "error",
         {
           defaultImportability: "package",
+          excludeSourcePatterns: [".next/**/*"],
         },
       ],
     },
